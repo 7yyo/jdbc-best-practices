@@ -1,4 +1,4 @@
-package error_case;
+package example;
 
 import java.sql.*;
 
@@ -23,7 +23,7 @@ public class MysqlIO_41 {
         ResultSet rs = ps.executeQuery();
 
         // Comment out this code, you can reproduce MysqlIO.41
-        // If you want to forcibly close the resultset without reporting MysqlIO.41, please set <h> clobberStreamingResults = true </h>
+        // If you want to forcibly close the resultset without reporting MysqlIO.41, please set <h> clobberStreamingResults=true </h> at jdbc url.
         while (rs.next()) {
             System.out.println(rs.getString("id"));
         }
