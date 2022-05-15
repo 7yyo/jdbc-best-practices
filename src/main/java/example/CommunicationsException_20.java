@@ -16,11 +16,15 @@ import java.sql.Statement;
  */
 public class CommunicationsException_20 {
 
-
-    public static void main(String[] args) throws SQLException, InterruptedException, ClassNotFoundException {
+    public static void main(String[] args)
+            throws SQLException, InterruptedException, ClassNotFoundException {
 
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://172.16.101.3:4000/test?useServerPrepStmts=true&cachePrepStmts=true", "root", "");
+        Connection conn =
+                DriverManager.getConnection(
+                        "jdbc:mysql://172.16.101.3:4000/test?useServerPrepStmts=true&cachePrepStmts=true",
+                        "root",
+                        "");
         conn.setAutoCommit(false);
 
         // Kill this connection id in database
@@ -30,7 +34,5 @@ public class CommunicationsException_20 {
         sm.executeQuery("select 1");
         sm.close();
         conn.close();
-
     }
-
 }

@@ -24,11 +24,16 @@ import java.sql.Statement;
  */
 public class CommunicationsException_3 {
 
-    public static void main(String[] args) throws SQLException, InterruptedException, ClassNotFoundException {
+    public static void main(String[] args)
+            throws SQLException, InterruptedException, ClassNotFoundException {
 
         // Set database variables WAIT_TIME = 1 first.
         Class.forName("com.mysql.cj.jdbc.Driver");
-        Connection conn = DriverManager.getConnection("jdbc:mysql://172.16.101.3:4000/test?useServerPrepStmts=true&cachePrepStmts=true", "root", "");
+        Connection conn =
+                DriverManager.getConnection(
+                        "jdbc:mysql://172.16.101.3:4000/test?useServerPrepStmts=true&cachePrepStmts=true",
+                        "root",
+                        "");
         conn.setAutoCommit(false);
 
         Thread.sleep(15000);
@@ -38,5 +43,4 @@ public class CommunicationsException_3 {
         sm.close();
         conn.close();
     }
-
 }

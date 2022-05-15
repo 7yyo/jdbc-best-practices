@@ -14,7 +14,8 @@ public class GetConnectionTimeout {
 
         HikariConfig config = new HikariConfig();
 
-        config.setJdbcUrl("jdbc:mysql://172.16.101.3:4000/test?useServerPrepStmts=true&cachePrepStmts=true");
+        config.setJdbcUrl(
+                "jdbc:mysql://172.16.101.3:4000/test?useServerPrepStmts=true&cachePrepStmts=true");
         config.setUsername("root");
         config.setPassword("");
 
@@ -30,9 +31,7 @@ public class GetConnectionTimeout {
             Task t = new Task(dataSource.getConnection());
             t.start();
         }
-
     }
-
 }
 
 class Task extends Thread {
@@ -56,5 +55,4 @@ class Task extends Thread {
             e.printStackTrace();
         }
     }
-
 }
